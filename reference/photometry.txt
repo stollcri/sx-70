@@ -1,0 +1,228 @@
+
+		The Photometric System
+	Light flux, for the purposes of illumination engineering, is measured 
+in lumens.  A lumen of light, no matter what its wavelength (color), 
+appears equally bright to the human eye.  The human eye has a stronger 
+response to some wavelengths of light than to other wavelengths.  The 
+strongest response for the light-adapted eye (when scene luminance >/= .001 
+Lambert) comes at a wavelength of 555 nm.  A light-adapted eye is said to 
+be operating in the photopic region.  A dark-adapted eye is operating in the 
+scotopic region (scene luminance </= 10^-8 Lambert).  In between is the 
+mesopic region.  The peak response of the eye shifts from 555 nm to 510 
+nm as scene luminance is decreased from the photopic region to the 
+scotopic region.  The standard lumen is approximately 1/680 of a watt of 
+radiant energy at 555 nm.  Standard values for other wavelengths are 
+based on the photopic response curve and are given with two-place 
+accuracy by the table below.  The values are correct no matter what region 
+you're operating in - they're based only on the photopic region.  If you're 
+operating in a different region, there are corrections to apply to obtain 
+the eye's relative response, but this doesn't change the standard values 
+given below.  
+
+Wavelength, nm   Lumens/watt         Wavelength, nm  Lumens/watt
+      400           0.27                600              430
+      450          26                   650               73
+      500        220                    700                2.8
+      550        680
+
+	Following are the standard units used in photometry with their 
+definitions and symbols.
+
+	Luminous flux, F, is measured in lumens.
+	Quantity of light, Q, is measured in lumen-hours or lumen-seconds.  
+It is the time integral of luminous flux.
+	Luminous Intensity, I, is measured in candles, candlepower, or 
+candela (all the same thing).  It is a measure of how much flux is flowing 
+through a solid angle.  A lumen per steradian is a candle.  There are 4 pi 
+steradians to a complete solid angle.  A unit area at unit distance from a 
+point source covers a steradian.  This follows from the fact that the 
+surface area of a sphere is 4 pi r^2.  
+	Lamps are measured in MSCP, mean spherical candlepower.  If you 
+multiply MSCP by 4 pi, you have the lumen output of the lamp.  In the case of 
+an ordinary lamp which has a horizontal filament when it is burning base 
+down, roughly 3 steradians are ineffectual: one is wiped out by inter- 
+ference from the base and two more are very low intensity since not much 
+light comes off either end of the filament.  So figure the MSCP should be 
+multiplied by 4/3 to get the candles coming off perpendicular to the lamp 
+filament.  Incidentally, the number of lumens coming from an incandescent 
+lamp varies approximately as the 3.6 power of the voltage.  This can be 
+really important if you are using a lamp of known candlepower to 
+calibrate a photometer.
+	Illumination (illuminance), E, is the _areal density_ of incident 
+luminous flux: how many lumens per unit area.  A lumen per square foot is 
+a foot-candle; a one square foot area on the surface of a sphere of radius 
+one foot and having a one candle point source centered in it would 
+therefore have an illumination of one foot-candle due to the one lumen 
+falling on it.  If you substitute meter for candle you have a meter-candle 
+or lux.  In this case you still have the flux of one steradian but now it's 
+spread out over one square meter.  Multiply an illumination level in lux by 
+.0929 to convert it to foot-candles.  (footÖ/meter)^2= .0929.  A centimeter-
+candle is a phot.  Illumination from a point source falls off as the square 
+of the distance.  So if you divide the intensity of a point source in candles 
+by the distance from it in feet squared, you have the illumination in foot 
+candles at that distance.
+	Luminance, B, is the _areal intensity_ of an extended diffuse source 
+or an extended diffuse reflector.  If a perfectly diffuse, perfectly 
+reflecting surface has one foot-candle (one lumen per square foot) of 
+illumination falling on it, its luminance is one foot-Lambert or 1/pi
+candles per square foot.  The total amount of flux coming off this 
+perfectly diffuse, perfectly reflecting surface is, of course, one lumen per 
+square foot.  Looking at it another way, if you have a one square foot 
+diffuse source that has a luminance of one candle per square foot (pi times 
+as much intensity as in the previous example), then the total output of 
+this source is pi lumens.  If you travel out a good distance along the 
+normal to the center of this one square foot surface, it will look like a 
+point source with an  intensity of one candle.  
+	To contrast: Intensity in candles is for a point source while 
+luminance in candles per square foot is for an extended source - luminance 
+is intensity per unit area.  If it's a perfectly diffuse but not perfectly 
+reflecting surface, you have to multiply by the reflectance, k, to find the 
+luminance.  
+	Also to contrast: Illumination, E, is for the incident or incoming 
+flux's areal _density_; luminance, B, is for reflected or outgoing flux's 
+areal _intensity_.  In the ideal case of illumination, incoming flux is more 
+or less  perpendicular to the surface being illuminated.  But an extended 
+source emits light according to the cosine law and a diffuse reflecting 
+surface reflects according to the cosine law: the amount of flux emitted 
+per unit surface area is proportional to the cosine of the angle between 
+the direction in which the flux is being emitted and the normal to the 
+emitting surface.  A consequence of this law is that no matter from what 
+direction you look at a perfectly diffuse reflecting or emitting surface, 
+the luminance on the basis of _projected_ area is the same.  So if you have 
+a light meter looking at a perfectly diffuse surface, it doesn't matter 
+what the angle between the axis of the light meter and the normal to the 
+surface is as long as all the light meter can see is the surface: in any case 
+the reading will be the same.
+	There are a number of luminance units, but they are in categories:  
+two of the categories are those using English units and those using metric 
+units.  Another two categories are those which have the constant1/¹ built 
+into them and those that do not.  The latter stems from the fact that the 
+formula to calculate luminance (photometric Brightness), B, from 
+illumination (illuminance), E,  contains the factor 1/¹.  To illustrate:
+
+		B = (k*E)(1/pi) 
+		Bfl = k*E 
+
+where:	B = luminance, candles/foot^2
+	Bfl = luminance, foot-Lamberts
+	k = reflectivity   	    0<k<1
+	E = illuminance in foot-candles (lumens/ foot^2)
+
+	Obviously, if you divide a luminance expressed in 
+foot-Lamberts by pi you then have the luminance expressed in 
+candles /foot^2.  (Bfl/pi=B)
+
+Other luminance units are:
+                stilb = 1 candle/square centimeter      sb
+                apostilb = stilb/(pi X 10^4)=10^-4 L    asb
+                nit = 1 candle/ square meter            nt
+                Lambert = (1/pi) candle/square cm       L
+
+	Below is a table of photometric units with short definitions.
+
+  Symbol      Term                 Unit              Unit Definition
+
+    Q      light quantity       lumen-hour          radiant energy 
+                                lumen-second        as corrected for
+                                                    eye's spectral response
+
+    F      luminous flux        lumen               radiant energy flux 	
+                                                    as corrected for
+                                                    eye's spectral response
+
+    I      luminous intensity   candle              one lumen per steradian
+                                candela             one lumen per steradian
+                                candlepower         one lumen per steradian
+
+    E      illumination	        foot-candle         lumen/foot^2
+                                lux                 lumen/meter^2
+                                phot                lumen/centimeter^2
+
+    B      luminance            candle/foot^2       see unit def's. above
+                                foot-Lambert   =    (1/pi) candles/foot^2
+                                Lambert        =    (1/pi) candles/centimeter^2
+                                stilb          =    1 candle/centimeter^2
+                                nit            =    1 candle/meter^2
+
+Note: A lumen-second is sometimes known as a Talbot.
+
+To review:
+
+	Quantity of light, Q, is akin to a quantity of photons except that here 
+the number of photons is pro-rated according to how bright they appear to the 
+eye.
+	Luminous flux, F, is akin to the time rate of flow of photons except 
+that the photons are not given a value based on their wavelength or energy 
+but rather on how bright they apppear to the eye.
+	Luminous intensity, I, is the solid-angular density of luminous flux.  
+Applies primarily to point sources.
+	Illumination, E, is the areal density of incident luminous flux.
+	Luminance, B, is the areal intensity of an extended source.
+
+
+	           Photometry with a Photographic Light Meter
+	The first caveat to keep in mind is that the average unfiltered light 
+meter doesn't have the same spectral sensitivity curve that the human eye 
+does.  Each type of sensor used has its own curve.  Silicon blue cells aren't 
+too bad.  The overall sensitivity of a cell is usually measured with a 
+2856K or 2870K incandescent lamp.  Less commonly it is measured with 
+6000K sunlight.
+	The basis of using a light meter is the fact that a light meter uses 
+the Additive Photographic Exposure System, the system which uses 
+Exposure Values:
+
+         Ev = Av + Tv = Sv + Bv
+
+where:   Ev = Exposure Value
+         Av = Aperture Value = ln N^2/ln 2    where N = f/no.
+         Tv = Time Value = ln (t^-1)/ln 2     where t = time in sec.s
+         Sv = Speed Value = ln (0.3 S)/ln 2   where S = ASA speed
+         Bv = Brightness Value = ln Bfl/ln 2
+
+from which, for example:
+	    Av(N=f/1) = 0
+	    Tv(t=1 sec) = 0
+	    Sv(S=ASA 3.125) Å 
+	    Bv( Bfl = 1 foot-Lambert) = 0
+
+and therefore:
+	    Bfl = 2^Bv
+	    Ev (Sv = 0) = Bv
+
+	From the preceeding two equations you can see that if you set the 
+meter dial to an ASA speed of approximately 3.1 (same as Sv = 0), when 
+you read a scene luminance level the Ev reading will be Bv from which you 
+can calculate Bfl.  If you don't have an ASA setting of 3.1 on your dial, just 
+use ASA 100 and subtract 5 from the Ev reading to get Bv.  
+(Sv@ASA100=5)
+
+ 		                Image Illumination
+	If you know the object luminance (photometric brightness), the 
+f-number of the lens, and the image magnification, you can calculate the 
+image illumination.  The image magnification is the quotient of any linear 
+dimension in the image divided by the corresponding linear dimension on 
+the object.  It is, in the usual photographic case, a number less than one.  
+The f-number is the f-number for the lens when focussed at infinity - this 
+is what's written on the lens.  The formula that relates these quantities is 
+given below:
+
+		Eimage = (t pi B)/[4 N^2 (1+m)^2]
+or:		Eimage = (t Bfl)/[4 N^2 (1+m)^2]
+where:	Eimage is in foot-candles  (divide by .0929 to get lux)
+           t   is the transmittance of the lens (usually .9 to .95 but lower 
+                  for more surfaces in the lens or lack of anti-reflection    
+                   coatings)
+           B   is the object luminance in candles/square foot
+           Bfl is the object luminance in foot-Lamberts
+           N   is the f-number of the lens
+           m   is the image magnification
+
+References:
+G.E. Miniature Lamp Catalog
+Gilway Technical Lamp Catalog
+"Lenses in Photography" Rudolph Kingslake Rev.Ed.c1963 A.S.Barnes
+"Applied Optics & Optical Engr." Ed. by Kingslake c1965 Academic Press
+"The Lighting Primer" Bernard Boylan c1987 Iowa State Univ.
+"University Physics" Sears & Zemansky c1955 Addison-Wesley
+
+
