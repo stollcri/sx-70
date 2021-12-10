@@ -152,39 +152,34 @@ logger.info("Finding value ranges ...")
 
 if (
     value_min < EXPECTED_LUX_OFF_MAX
-    and len(values_off) > 0
     and len(values_low) > 0
     and len(values_med) > 0
     and len(values_max) > 0
 ):
-    logger.info("Refining range for OFF ...")
-    if max(values_off) - min(values_off) > 20:
-        (_, values_off, _, _, _) = scan(min(values_off), max(values_off), 20)
-    values_off = int(median(values_off))
-
-    if len(values_low) > 0:
-        logger.info("Refining range for LOW ...")
-        if max(values_low) - min(values_low) > 20:
-            (_, _, values_low, _, _) = scan(min(values_low), max(values_low), 20)
-        values_low = int(median(values_low))
+    if len(values_off) > 0:
+        logger.info("Refining range for OFF ...")
+        if max(values_off) - min(values_off) > 20:
+            (_, _, values_off, _, _) = scan(min(values_off), max(values_off), 20)
+        values_off = int(median(values_off))
     else:
-        values_low = None
+        if len(values_off) <= 0:
+            logger.warning(f"No light level range found for off ({COMPARALUMEN_OFF})")
+        values_off = None
 
-    if len(values_med) > 0:
-        logger.info("Refining range for MED ...")
-        if max(values_med) - min(values_med) > 20:
-            (_, _, _, values_med, _) = scan(min(values_med), max(values_med), 20)
-        values_med = int(median(values_med))
-    else:
-        values_med = None
+    logger.info("Refining range for LOW ...")
+    if max(values_low) - min(values_low) > 20:
+        (_, _, values_low, _, _) = scan(min(values_low), max(values_low), 20)
+    values_low = int(median(values_low))
+    
+    logger.info("Refining range for MED ...")
+    if max(values_med) - min(values_med) > 20:
+        (_, _, _, values_med, _) = scan(min(values_med), max(values_med), 20)
+    values_med = int(median(values_med))
 
-    if len(values_max) > 0:
-        logger.info("Refining range for MAX ...")
-        if max(values_max) - min(values_max) > 20:
-            (_, _, _, _, values_max) = scan(min(values_max), max(values_max), 20)
-        values_max = int(median(values_max))
-    else:
-        values_max = None
+    logger.info("Refining range for MAX ...")
+    if max(values_max) - min(values_max) > 20:
+        (_, _, _, _, values_max) = scan(min(values_max), max(values_max), 20)
+    values_max = int(median(values_max))
 
     print(f"PWM setting for off ({COMPARALUMEN_OFF}) = {values_off}")
     print(f"PWM setting for low ({COMPARALUMEN_LOW}) = {values_low}")
@@ -196,8 +191,6 @@ else:
         logger.error(
             f"Ambient light level exceeds allowed limit {EXPECTED_LUX_OFF_MAX}"
         )
-    if len(values_off) <= 0:
-        logger.error(f"No light level range found for off ({COMPARALUMEN_OFF})")
     if len(values_low) <= 0:
         logger.error(f"No light level range found for low ({COMPARALUMEN_LOW})")
     if len(values_med) <= 0:

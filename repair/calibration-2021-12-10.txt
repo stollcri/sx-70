@@ -1,0 +1,14 @@
+PWM setting for off (6.25) = None
+PWM setting for low (50) = 2457
+PWM setting for med (100) = 4587
+PWM setting for max (800) = 36830
+
+PWM setting for off (6.25) = None
+PWM setting for low (50) = 2621
+PWM setting for med (100) = 4587
+PWM setting for max (800) = 37026
+
+PWM setting for off (6.25) = None
+PWM setting for low (50) = 2621
+PWM setting for med (100) = 4832
+PWM setting for max (800) = 37387
